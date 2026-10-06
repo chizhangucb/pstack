@@ -1,0 +1,20 @@
+{
+  "description": "Claude Code stand-in for Cursor's Custom Mode: keeps poteto-mode's playbook rule in front of the agent.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/poteto-reminder.sh\" main || true", "timeout": 10 }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "poteto-agent|pstack:poteto-agent",
+        "hooks": [
+          { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/poteto-reminder.sh\" subagent || true", "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}
