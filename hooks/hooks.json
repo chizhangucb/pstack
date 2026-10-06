@@ -1,5 +1,5 @@
 {
-  "description": "Claude Code stand-in for Cursor's Custom Mode: keeps poteto-mode's playbook rule in front of the agent.",
+  "description": "Claude Code stand-in for Cursor's Custom Mode: once a session mentions poteto-mode, keeps its playbook rule in front of the agent.",
   "hooks": {
     "UserPromptSubmit": [
       {
